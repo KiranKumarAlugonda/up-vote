@@ -1,15 +1,7 @@
-lib-cov
-*.seed
-*.log
-*.csv
-*.dat
-*.out
-*.pid
-*.gz
+# WebStorm IDE generated files #
+################################
+.idea
 
-pids
-logs
-results
-
-npm-debug.log
+# Node modules installed when using package.json and executing the command 'npm install'#
+#########################################################################################
 node_modules
