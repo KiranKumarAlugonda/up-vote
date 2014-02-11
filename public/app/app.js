@@ -1,6 +1,6 @@
 'use strict';
 
-var app = angular.module('app', ['topicsModule']).config(['$routeProvider', function ($routeProvider, $locationProvider) {
+var app = angular.module('app', ['ngRoute', 'topicsModule']).config(['$routeProvider', function ($routeProvider) {
 
 	/** Routes **/
 	$routeProvider.when('/', {
