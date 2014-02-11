@@ -36,11 +36,11 @@
     <div ng-view></div>
 </div>
 
-<div id="footer">
+<div id="footer" ng-controller="footerController">
     <div class="container">
         <div class="text-muted">
         <span>
-            </span><span class="pull-right">Built in L.A.</span></div>
+            </span><span class="pull-right">{{footerControllerNS.builtBy}} {{footerControllerNS.copyright}} | {{footerControllerNS.version}} </span></div>
     </div>
 </div>
 

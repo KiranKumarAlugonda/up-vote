@@ -30,3 +30,16 @@ app.controller('mainController', ['$scope', function ($scope) {
 	$scope.mainControllerNS.title = 'Up Vote!';
 
 }]);
+
+/** Footer Controller **/
+app.controller('footerController', ['$scope', function ($scope) {
+	// Namespace object for variables and functions
+	$scope.footerControllerNS = {};
+
+	// variables
+	//TODO: put this is an external file
+	$scope.footerControllerNS.version = 'Version 0.2';
+	$scope.footerControllerNS.copyright = 'in L.A.';
+	$scope.footerControllerNS.builtBy = 'Built by Idea Nerd';
+
+}]);
