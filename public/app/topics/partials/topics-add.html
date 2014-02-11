@@ -24,35 +24,35 @@
         <!-- Begin page content -->
         <h1>Add A Topic</h1>
 
-        <form class="form-horizontal" role="form">
+        <form name="addTopicForm" class="form-horizontal" role="form">
             <div class="form-group">
                 <label for="firstName" class="col-sm-2 control-label">First Name</label>
 
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="firstName" placeholder="First Name"
-                           ng-model="topicsAddControllerNS.newTopic.name.first">
+                    <input type="text" class="form-control" name="firstName" id="firstName" placeholder="First Name"
+                           ng-model="topicsAddControllerNS.newTopic.name.first" required>
                 </div>
             </div>
             <div class="form-group">
                 <label for="lastName" class="col-sm-2 control-label">Last Name</label>
 
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="lastName" placeholder="Last Name"
-                           ng-model="topicsAddControllerNS.newTopic.name.last">
+                    <input type="text" class="form-control" name="lastName" id="lastName" placeholder="Last Name"
+                           ng-model="topicsAddControllerNS.newTopic.name.last" required>
                 </div>
             </div>
             <div class="form-group">
                 <label for="topicTitle" class="col-sm-2 control-label">Topic</label>
 
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="topicTitle" placeholder="Topic Title"
-                           ng-model="topicsAddControllerNS.newTopic.title">
+                    <input type="text" class="form-control" name="title" id="topicTitle" placeholder="Topic Title"
+                           ng-model="topicsAddControllerNS.newTopic.title" required>
                 </div>
             </div>
 
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
-                    <button type="submit" class="btn"
+                    <button type="submit" class="btn" ng-disabled="topicsAddControllerNS.isValidForm()"
                             ng-click="topicsAddControllerNS.addTopic(topicsAddControllerNS.newTopic)"><span
                             class="glyphicon glyphicon-plus"></span> Add A Topic
                     </button>

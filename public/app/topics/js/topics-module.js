@@ -6,6 +6,8 @@ var topicsModule = angular.module('topicsModule', []);
 topicsModule.controller('topicsController', ['$scope', 'topicsService', function ($scope, topicsService) {
 	// Namespace object for variables and functions
 	$scope.topicsControllerNS = {};
+	$scope.foo = 'hello world'
+
 
 	// variables
 	$scope.topicsControllerNS.title = 'Topics List';
@@ -30,6 +32,8 @@ topicsModule.controller('topicsAddController', ['$scope', 'topicsService', funct
 	// Namespace object for variables and functions
 	$scope.topicsAddControllerNS = {};
 
+
+
 	// variables
 	$scope.topicsAddControllerNS.newTopic = {
 		name: {
@@ -46,6 +50,16 @@ topicsModule.controller('topicsAddController', ['$scope', 'topicsService', funct
 			window.alert('Added: ' + topic.title);
 		});
 	};
+	$scope.topicsAddControllerNS.isValidForm = function () {
+		if ($scope.addTopicForm.firstName.$valid &&
+			$scope.addTopicForm.lastName.$valid &&
+			$scope.addTopicForm.title.$valid) {
+			return false;
+		} else {
+			return true;
+		}
+	};
+
 }]);
 
 /** Service Factories **/
