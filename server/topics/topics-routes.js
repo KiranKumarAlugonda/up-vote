@@ -26,7 +26,6 @@ exports.addATopic = function (req, res) {
 };
 
 exports.updateATopic = function (req, res) {
-	console.log(req.body);
 	db.Topics.findById(req.body._id, function (err, topic) {
 		if (err) {
 			console.log('ERROR:' + err);
@@ -39,6 +38,7 @@ exports.updateATopic = function (req, res) {
 		topic.name = req.body.name;
 		topic.title = req.body.title;
 		topic.votes = req.body.votes;
+		topic.month = req.body.month;
 
 		topic.save(function (err) {
 			if (err) {

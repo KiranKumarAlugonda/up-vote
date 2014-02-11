@@ -10,6 +10,7 @@ var TopicsSchema = new Schema({
 		last: {type: String, default: null}
 	},
 	title: {type: String, default: null},
+	month: {type: String, default: null},
 	votes: {type: Number, default: 0}
 });
 
