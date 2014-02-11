@@ -38,8 +38,8 @@ app.controller('footerController', ['$scope', function ($scope) {
 
 	// variables
 	//TODO: put this is an external file
-	$scope.footerControllerNS.version = 'Version 0.2';
-	$scope.footerControllerNS.copyright = 'in L.A.';
-	$scope.footerControllerNS.builtBy = 'Built by Idea Nerd';
+	$scope.footerControllerNS.version = '0.2';
+	$scope.footerControllerNS.builtIn = 'L.A.';
+	$scope.footerControllerNS.builtBy = 'Idea Nerd';
 
 }]);
