@@ -33,7 +33,6 @@ topicsModule.controller('topicsAddController', ['$scope', 'topicsService', funct
 	$scope.topicsAddControllerNS = {};
 
 
-
 	// variables
 	$scope.topicsAddControllerNS.newTopic = {
 		name: {
@@ -53,14 +52,17 @@ topicsModule.controller('topicsAddController', ['$scope', 'topicsService', funct
 	$scope.topicsAddControllerNS.isValidForm = function () {
 		if ($scope.addTopicForm.firstName.$valid &&
 			$scope.addTopicForm.lastName.$valid &&
-			$scope.addTopicForm.title.$valid) {
+			$scope.addTopicForm.title.$valid &&
+			$scope.addTopicForm.month.$valid) {
 			return false;
-		} else {
+		}
+		else {
 			return true;
 		}
-	};
-
-}]);
+	}
+}
+])
+;
 
 /** Service Factories **/
 topicsModule.factory('topicsService', ['$http', function ($http) {

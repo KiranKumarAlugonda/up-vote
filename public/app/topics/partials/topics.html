@@ -24,11 +24,44 @@
         <!-- Begin page content -->
         <h1>{{topicsControllerNS.title}}</h1>
         <ul class="list-group">
+            <li class="list-group-item" id="topic-list-header">
+                <div class="row">
+                    <div class="col-lg-1">
+                        <!-- empty on purpose -->
+                    </div>
+                    <div class="col-lg-4">
+                        Discussion Topic
+                    </div>
+                    <div class="col-lg-3">
+                        Presenter
+                    </div>
+                    <div class="col-lg-2">
+                        Month
+                    </div>
+                    <div class="col-lg-2">
+                        Up Votes
+                    </div>
+                </div>
+            </li>
             <li class="list-group-item" ng-repeat="topic in topicsControllerNS.topics">
-                <button class="btn btn-sm" ng-click="topicsControllerNS.upVote($index)"><span
-                        class="glyphicon glyphicon-thumbs-up"></span></button>
-                <span class="badge">{{topic.votes}}</span>
-                {{topic.title}} - Presented by {{topic.name.first}} {{topic.name.last}}
+                <div class="row">
+                    <div class="col-lg-1">
+                        <button class="btn btn-sm" ng-click="topicsControllerNS.upVote($index)"><span
+                                class="glyphicon glyphicon-thumbs-up"></span></button>
+                    </div>
+                    <div class="col-lg-4">
+                        {{topic.title}}
+                    </div>
+                    <div class="col-lg-3">
+                        {{topic.name.first}} {{topic.name.last}}
+                    </div>
+                    <div class="col-lg-2">
+                        {{topic.month}}
+                    </div>
+                    <div class="col-lg-2">
+                        <span class="badge">{{topic.votes}}</span>
+                    </div>
+                </div>
             </li>
         </ul>
         <!-- End page content -->

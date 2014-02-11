@@ -43,3 +43,8 @@ body {
 code {
     font-size: 80%;
 }
+
+/* Topic list header */
+#topic-list-header {
+    background-color: lightgrey;
+}
