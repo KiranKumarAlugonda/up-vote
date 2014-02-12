@@ -44,6 +44,7 @@ server.get('/', function (req, res) {
 server.get('/api/topics', topics.listAllTopics);
 server.post('/api/topics', topics.addATopic);
 server.put('/api/topics', topics.updateATopic);
+server.delete('/api/topics/:id', topics.removeATopic);
 
 //TODO: routes for 404 and 500 pages
 

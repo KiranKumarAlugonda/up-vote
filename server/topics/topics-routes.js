@@ -49,3 +49,16 @@ exports.updateATopic = function (req, res) {
 		});
 	});
 };
+
+exports.removeATopic = function (req, res) {
+	db.Topics.remove({_id: req.params.id}, function (err, topic) {
+		if (err) {
+			console.log('ERROR:' + err);
+			return res.send({message: 'A server-side error occurred. Please try again later.'}, 500);
+		}
+		if (!topic || topic.length === 0) {
+			return res.send({message: 'Topic not found.'}, 400);
+		}
+		return res.send({message: 'Successfully deleted topic.'}, 200);
+	});
+};
