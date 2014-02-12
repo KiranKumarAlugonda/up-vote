@@ -6,8 +6,6 @@ var topicsModule = angular.module('topicsModule', []);
 topicsModule.controller('topicsController', ['$scope', 'topicsService', function ($scope, topicsService) {
 	// Namespace object for variables and functions
 	$scope.topicsControllerNS = {};
-	$scope.foo = 'hello world'
-
 
 	// variables
 	$scope.topicsControllerNS.title = 'Topics List';
@@ -24,6 +22,15 @@ topicsModule.controller('topicsController', ['$scope', 'topicsService', function
 		topic.votes++;
 		topicsService.updateTopic(topic).then(function (topic) {
 			$scope.topicsControllerNS.topics[index] = topic;
+		});
+	};
+	$scope.topicsControllerNS.removeTopic = function (id) {
+		topicsService.deleteTopic(id).then(function (response) {
+			for (var i = 0; i < $scope.topicsControllerNS.topics.length; i++) {
+				if ($scope.topicsControllerNS.topics[i]._id == id) {
+					$scope.topicsControllerNS.topics.splice(i, 1);
+				}
+			}
 		});
 	};
 }]);
@@ -59,7 +66,7 @@ topicsModule.controller('topicsAddController', ['$scope', 'topicsService', funct
 		else {
 			return true;
 		}
-	}
+	};
 }
 ])
 ;
@@ -112,8 +119,23 @@ topicsModule.factory('topicsService', ['$http', function ($http) {
 				}
 			});
 			return promise;
-		}
+		},
+		deleteTopic: function (id) {
+			var config = {
+				method: 'DELETE',
+				url: '/api/topics/' + id
+			};
 
+			var promise = $http(config).then(function (response) {
+				if (response.status === 200) {
+					return response.data;
+				} else {
+					window.alert(response.data.message);
+					return response.data
+				}
+			});
+			return promise;
+		}
 	}
 	return TopicsService;
 }]);

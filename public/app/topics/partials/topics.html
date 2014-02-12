@@ -46,7 +46,7 @@
             <li class="list-group-item" ng-repeat="topic in topicsControllerNS.topics">
                 <div class="row">
                     <div class="col-lg-1">
-                        <button class="btn btn-sm" ng-click="topicsControllerNS.upVote($index)"><span
+                        <button class="btn btn-sm btn-default" ng-click="topicsControllerNS.upVote($index)"><span
                                 class="glyphicon glyphicon-thumbs-up"></span></button>
                     </div>
                     <div class="col-lg-4">
@@ -60,6 +60,9 @@
                     </div>
                     <div class="col-lg-2">
                         <span class="badge">{{topic.votes}}</span>
+                        <button class="btn btn-sm  btn-danger pull-right"
+                                ng-click="topicsControllerNS.removeTopic(topic._id)"><span
+                                class="glyphicon glyphicon-remove"></span></button>
                     </div>
                 </div>
             </li>
