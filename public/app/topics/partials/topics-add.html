@@ -1,3 +1,4 @@
+<!-- This is the template for the /topics/add url -->
 <div id="wrap">
     <div class="container">
         <!-- Fixed navbar -->
@@ -23,12 +24,13 @@
         </div>
         <!-- Begin page content -->
         <h1>Add A Topic</h1>
-
-        <form name="addTopicForm" class="form-horizontal" role="form">
+        <!-- ng-form is an example of an Angular element directive -->
+        <ng-form name="addTopicForm" class="form-horizontal" role="form">
             <div class="form-group">
                 <label for="firstName" class="col-sm-2 control-label">First Name</label>
 
                 <div class="col-sm-10">
+                    <!-- ng-model is an example of an Angular attribute directive -->
                     <input type="text" class="form-control" name="firstName" id="firstName" placeholder="First Name"
                            ng-model="topicsAddControllerNS.newTopic.name.first" required>
                 </div>
@@ -37,6 +39,7 @@
                 <label for="lastName" class="col-sm-2 control-label">Last Name</label>
 
                 <div class="col-sm-10">
+                    <!-- input is an example of an Angular element directive that replaces the HTML input tag -->
                     <input type="text" class="form-control" name="lastName" id="lastName" placeholder="Last Name"
                            ng-model="topicsAddControllerNS.newTopic.name.last" required>
                 </div>
@@ -73,13 +76,14 @@
 
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
+                    <!-- This is is an example of an expression accessing a function -->
                     <button type="submit" class="btn" ng-disabled="topicsAddControllerNS.isValidForm()"
                             ng-click="topicsAddControllerNS.addTopic(topicsAddControllerNS.newTopic)"><span
                             class="glyphicon glyphicon-plus"></span> Add A Topic
                     </button>
                 </div>
             </div>
-        </form>
+        </ng-form>
         <!-- End page content -->
     </div>
 </div>

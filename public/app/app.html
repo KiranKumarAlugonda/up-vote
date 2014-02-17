@@ -37,11 +37,14 @@
     <div ng-view></div>
 </div>
 
+<!-- This is an example of a controller embedded for use within a specific HTML Tag. Since scope is tied to Controllers  {{footerControllerNS.builtBy}}
+will not render a value outside of the <div> tag -->
 <div id="footer" ng-controller="footerController">
     <div class="container">
         <div class="text-muted">
-        <span>
-            </span><span class="pull-right">Build by <a href="http://www.ideanerd.com">{{footerControllerNS.builtBy}}</a> in {{footerControllerNS.builtIn}} | version {{footerControllerNS.version}} </span>
+            <!-- This is has three examples of an expression. All three expressions are accessing variables -->
+            <span class="pull-right">Build by <a
+                    href="http://www.ideanerd.com">{{footerControllerNS.builtBy}}</a> in {{footerControllerNS.builtIn}} | version {{footerControllerNS.version}} </span>
         </div>
     </div>
 </div>

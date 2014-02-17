@@ -41,6 +41,8 @@ topicsModule.controller('topicsAddController', ['$scope', 'topicsService', funct
 
 
 	// variables
+
+	/* This is an example of a model variable */
 	$scope.topicsAddControllerNS.newTopic = {
 		name: {
 			first: undefined,
@@ -51,6 +53,7 @@ topicsModule.controller('topicsAddController', ['$scope', 'topicsService', funct
 	};
 
 	// functions
+	/* This is an example of a model function */
 	$scope.topicsAddControllerNS.addTopic = function (newTopic) {
 		topicsService.addTopic(newTopic).then(function (topic) {
 			window.alert('Added: ' + topic.title);
@@ -67,9 +70,7 @@ topicsModule.controller('topicsAddController', ['$scope', 'topicsService', funct
 			return true;
 		}
 	};
-}
-])
-;
+}]);
 
 /** Service Factories **/
 topicsModule.factory('topicsService', ['$http', function ($http) {
