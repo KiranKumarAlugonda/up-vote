@@ -1,41 +1,44 @@
+<!-- This is the template for the / url -->
 <div id="wrap">
-    <div class="container">
-        <!-- Fixed navbar -->
-        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="/">Home</a>
-                </div>
-                <div class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav">
-                        <ul class="nav navbar-nav">
-                            <li><a href="#/topics">Topics</a></li>
-                            <li><a href="#/topics/add">Add Topic</a></li>
-                        </ul>
-                    </ul>
-                </div>
-                <!--/.nav-collapse -->
-            </div>
-        </div>
-        <!-- Begin page content -->
-        <h1>{{mainControllerNS.title}}</h1>
+	<div class="container">
+		<!-- Fixed navbar -->
+		<!-- <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="/">Home</a>
+				</div>
+				<div class="collapse navbar-collapse">
+					<ul class="nav navbar-nav">
+						<ul class="nav navbar-nav">
+							<li><a href="#/topics">Topics</a></li>
+							<li><a href="#/topics/add">Add Topic</a></li>
+						</ul>
+					</ul>
+				</div>
+			</div>
+		</div> -->
+		<uv-navbar></uv-navbar>
+		<!-- Begin page content -->
+		<h1>{{mainControllerNS.title}}</h1>
 
-        <p>A simple Angular app that can be used to list discussion topics and gauge interest in them.</p>
+		<p>A simple Angular app that can be used to list discussion topics and gauge interest in them.</p>
 
-        <h2>Purpose</h2>
-        <ol>
-            <li>A tool for the <a href="http://www.meetup.com/socal-angular/">Socal AngularJS Meetup Group</a> to track discussion topics.</li>
-            <li>A teaching tool for a series of Lightning Talks.</li>
-        </ol>
-        <h2>Participate</h2>
+		<h2>Purpose</h2>
+		<ol>
+			<li>A tool for the <a href="http://www.meetup.com/socal-angular/">Socal AngularJS Meetup Group</a> to track
+				discussion topics.
+			</li>
+			<li>A teaching tool for a series of Lightning Talks.</li>
+		</ol>
+		<h2>Participate</h2>
 
-        <p>Fork the project on <a href="https://github.com/ldeavila/up-vote">GitHub</a> and/or suggest enhancements.</p>
-        <!-- End page content -->
-    </div>
+		<p>Fork the project on <a href="https://github.com/ldeavila/up-vote">GitHub</a> and/or suggest enhancements.</p>
+		<!-- End page content -->
+	</div>
 </div>
