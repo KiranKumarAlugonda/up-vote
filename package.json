@@ -1,6 +1,6 @@
 {
 	"name": "up-vote",
-	"version": "0.0.1",
+	"version": "0.0.0",
 	"private": false,
 	"scripts": {
 		"start": "node server/server.js"
