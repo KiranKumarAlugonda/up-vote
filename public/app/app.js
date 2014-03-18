@@ -4,17 +4,17 @@ angular.module('app', ['ngRoute', 'uvNavbar', 'topicsModule']).config(['$routePr
 
 		/** Routes **/
 		$routeProvider.when('/', {
-			templateUrl: '/app/common/main.html',
-			controller: 'mainController'
+			templateUrl: 'app/app.html',
+			controller: 'appController'
 		});
 
 		$routeProvider.when('/topics', {
-			templateUrl: '/app/components/topics/topics.html',
+			templateUrl: 'app/topics-pages/topics.html',
 			controller: 'topicsController'
 		});
 
 		$routeProvider.when('/topics/add', {
-			templateUrl: '/app/components/topics/topics-add.html',
+			templateUrl: 'app/topics-pages/topics-add.html',
 			controller: 'topicsAddController'
 		});
 
@@ -22,7 +22,7 @@ angular.module('app', ['ngRoute', 'uvNavbar', 'topicsModule']).config(['$routePr
 	}])
 
 /**  Main Controller **/
-	.controller('mainController', ['$scope', function ($scope) {
+	.controller('appController', ['$scope', function ($scope) {
 		// Namespace object for variables and functions
 		$scope.mainControllerNS = {};
 

@@ -39,7 +39,6 @@ angular.module('topicsModule', [])
 		// Namespace object for variables and functions
 		$scope.topicsAddControllerNS = {};
 
-
 		// variables
 
 		/* This is an example of a model variable */
