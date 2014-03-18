@@ -5,7 +5,7 @@ angular.module('uvNavbar', [])
 		return {
 			restrict: 'E',
 			replace: true,
-			templateUrl: '../app/components/navbar/uv-navbar.html',
+			templateUrl: '../app/components/navbar/uv-navbar-directive.html',
 			controller: function ($scope, $route, $location) {
 				if ($location.path() == '/topics') {
 					$scope.topicsPageState = 'active';

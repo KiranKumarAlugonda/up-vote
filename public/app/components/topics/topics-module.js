@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('topicsModule', [])
-
+	//TODO: separate these out to individual controller and service modules
 /** Controllers **/
 	.controller('topicsController', ['$scope', 'topicsService', function ($scope, topicsService) {
 		// Namespace object for variables and functions

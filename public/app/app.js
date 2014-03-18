@@ -9,12 +9,12 @@ var app = angular.module('app', ['ngRoute', 'uvNavbar', 'topicsModule']).config(
 	});
 
 	$routeProvider.when('/topics', {
-		templateUrl: '/app/topics/partials/topics.html',
+		templateUrl: '/app/components/topics/topics.html',
 		controller: 'topicsController'
 	});
 
 	$routeProvider.when('/topics/add', {
-		templateUrl: '/app/topics/partials/topics-add.html',
+		templateUrl: '/app/components/topics/topics-add.html',
 		controller: 'topicsAddController'
 	});
 
@@ -37,7 +37,7 @@ app.controller('footerController', ['$scope', function ($scope) {
 	$scope.footerControllerNS = {};
 
 	// variables
-	//TODO: put this is an external file
+	//TODO: Set these as variables and constants so we have examples of those things
 	$scope.footerControllerNS.version = '0.2';
 	$scope.footerControllerNS.builtIn = 'L.A.';
 	$scope.footerControllerNS.builtBy = 'Idea Nerd';
