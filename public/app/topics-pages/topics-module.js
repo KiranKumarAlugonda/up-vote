@@ -3,7 +3,7 @@
 angular.module('topicsModule', [])
 	//TODO: separate these out to individual controller and service modules
 /** Controllers **/
-	.controller('topicsController', ['$scope', 'topicsService', function ($scope, topicsService) {
+	.controller('topicsController', ['$scope', '$resource', '$http', 'topicsService', function ($scope, $resource, $http, topicsService) {
 		// Namespace object for variables and functions
 		$scope.topicsControllerNS = {};
 
@@ -11,7 +11,39 @@ angular.module('topicsModule', [])
 		$scope.topicsControllerNS.title = 'Topics List';
 		$scope.topicsControllerNS.topics = undefined;
 
-		// service calls
+		// EXAMPLE: Using $resource. Useful for RESTful endpoints
+		// Define a $resource
+		//var Topics = $resource('/api/topics');
+		//$scope.topicsControllerNS.topics = Topics.query();
+
+		// EXAMPLE: Using $http with .then(). Useful for both RESTful and non-RESTful endpoint
+		//$http.get('/api/topics').then(function (response) {
+		//  console.log(response.status);
+		//	if (response.status === 200) {
+		//		$scope.topicsControllerNS.topics = response.data;
+		//	} else {
+		//		// else for any status from 201 to 299
+		//		$scope.topicsControllerNS.topics = [];
+		//	}
+		//});
+
+		// EXAMPLE: Using $http with .success() and .error(). Useful for both RESTful and non-RESTful endpoint
+		//var config = {method: 'GET', url: '/api/topics'}
+		//$http(config)
+		//	.success(function (data, status, headers, config) {
+		//		console.log(status + ' SUCCESS');
+		//		if (status === 200) {
+		//			$scope.topicsControllerNS.topics = data;
+		//		} else {
+		//			// else for any status from 201 to 299
+		//			$scope.topicsControllerNS.topics = [];
+		//		}
+		//	})
+		//	.error(function (data, status, headers, config) {
+		//		console.log(status + ' ERROR');
+		//		$scope.topicsControllerNS.topics = [];
+		//	})
+
 		topicsService.getTopics().then(function (topics) {
 			$scope.topicsControllerNS.topics = topics;
 		});
